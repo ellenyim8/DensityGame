@@ -1,4 +1,5 @@
 # Game
+## Ellen Yim
 Density 
 
 2 player game
