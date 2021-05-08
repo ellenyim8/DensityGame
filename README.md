@@ -9,7 +9,13 @@ Controls: A = left, W = up, S = down, D = right
 right side player: 
 Controls: arrow buttons (up, left, right, down) 
 
-Goal: whoever reaches maximum amount points wins
+Pills points: 
+- Black = 4
+- Red = 3
+- Blue = 2
+- Yellow = 1
+
+Goal: whoever reaches 4000 points wins
 
 Modules: 
 - pycharm
