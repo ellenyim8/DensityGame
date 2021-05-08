@@ -1,14 +1,15 @@
 # Game
-## Ellen Yim
+Created by Ellen Y.
+
 Density 
 
 2 player game
 
 left side player: 
-Controls: A = left, W = up, S = down, D = right
+Controls: **A = left, W = up, S = down, D = right**
 
 right side player: 
-Controls: arrow buttons (up, left, right, down) 
+Controls: **arrow buttons (up, left, right, down)**
 
 Pills points: 
 - Black = 4
