@@ -11,7 +11,7 @@ Controls: **A = left, W = up, S = down, D = right**
 right side player: 
 Controls: **arrow buttons (up, left, right, down)**
 
-Pills points: 
+Pills points lowest (1) to highest (4) 
 - Black = 4
 - Red = 3
 - Blue = 2
