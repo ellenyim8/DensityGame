@@ -12,11 +12,11 @@ BLACK = (0,0,0)
 YELLOW = (241, 238, 11)
 RED = (240, 10, 10)
 BLUE = (10, 50, 240)
-
-WIDTH = 920
-HEIGHT = 570
+PINK = (200, 10, 150)
 
 SHIP_WIDTH = SHIP_HEIGHT = 20
+WIDTH = 920
+HEIGHT = 570
 TOP_BUFFER = 38
 PILL_WIDTH = 10
 PILL_HEIGHT = 25
@@ -100,7 +100,7 @@ class Ship(pygame.sprite.Sprite):
 class Pill(pygame.sprite.Sprite):
     def __init__(self, pos, density):
         pygame.sprite.Sprite.__init__(self)
-        self.speed = 3
+        self.speed = 2
         self.density = density
         self.image = pygame.Surface((PILL_WIDTH, PILL_HEIGHT)).convert()
         self.image.fill(self.set_color())
@@ -130,30 +130,29 @@ class Game:
         self.outro = outro
 
     def update(self, left_density, right_density):
-        if left_density.density >= 4000:
+        if left_density.density >= 5000:
             left_density.density += 1000
             left_density.image = pygame.transform.scale(left_density.image, (left_density.rect.width, left_density.rect.height))
             if right_density.density > 20:
                 right_density.density -= 20
                 right_density.image = pygame.transform.scale(right_density.image, (right_density.rect.width, right_density.rect.height))
 
-        elif right_density.density >= 4000:
+        elif right_density.density >= 5000:
             right_density.density += 1000
             right_density.image = pygame.transform.scale(right_density.image, (right_density.rect.width, right_density.rect.height))
             if left_density.density > 20:
                 left_density.density -= 20
                 left_density.image = pygame.transform.scale(left_density.image, (left_density.rect.width, left_density.rect.height))
 
-        if left_density.density >= 4000:
+        if left_density.density >= 10000:
             self.intro = False
             self.play = False
             self.outro = True
 
-        if right_density.density >= 4000:
+        if right_density.density >= 10000:
             self.intro = False
             self.play = False
             self.outro = True
-
 
 def main():
     # Initialize local variables
@@ -173,7 +172,7 @@ def main():
     left_ship = Ship(WIDTH / 4 - SHIP_WIDTH / 2, HEIGHT - (4 * SHIP_HEIGHT), 'left')
     right_ship = Ship((WIDTH / 1.5), HEIGHT - (4 * SHIP_HEIGHT), 'right')
 
-    # intro text
+    #intro text
     font = pygame.font.SysFont("Arial", 150)
     title = font.render("Density", 1, BLACK)
     title_rect = title.get_rect()
@@ -183,18 +182,18 @@ def main():
     sub_title_rect = title.get_rect()
     sub_title_rect = title_rect.move(WIDTH / 2 - title_rect.width + TOP_BUFFER, HEIGHT / 2 - title_rect.height / 1.5)
 
-    # score text
-    left_score = Text(str(left_ship.density), 50, WIDTH/2 - 250, 0 + 20, BLACK)
+    #score text
+    left_score= Text(str(left_ship.density), 50, WIDTH/2 - 250, 0 + 20, BLACK)
     right_score = Text(str(right_ship.density), 50, WIDTH - 250, 0 + 20, BLACK)
 
-    # win text
+    #win text
     left_wins = Text("Left Player Has Won.", 50, WIDTH/5, 0+20, BLACK)
     right_wins = Text("Right Player Has Won. ", 50, WIDTH/2 + TOP_BUFFER*5, 0+20, BLACK)
 
-    # winner per round
+    #winner per round
     left_win = Text("Left Player Won! ", 100, WIDTH/2, HEIGHT/2, BLACK)
     right_win = Text("Right Player Won! ", 100, WIDTH/2, HEIGHT/2, BLACK)
-    # replay
+    #replay
     ending = Text("--Click to Play Again--", 50, WIDTH/2, HEIGHT/2 + TOP_BUFFER*2, BLACK)
 
     # create groups
@@ -202,7 +201,7 @@ def main():
     ship_group.add(left_ship, right_ship)
     pill_group = pygame.sprite.Group()
 
-    # intro
+    #intro
     while run.intro:
         for event in pygame.event.get():
             if event.type == pygame.QUIT: sys.exit()
@@ -231,9 +230,9 @@ def main():
 
         if timer % 10 == 0:
             pill = Pill(random.randrange(0, WIDTH - PILL_WIDTH),
-                        int(random.choice("111111111111111222334")))
+                        int(random.choice("1111111111111111222334")))
             pill2 = Pill(random.randrange(0, WIDTH + PILL_WIDTH),
-                         int(random.choice("11111111111111222334")))
+                         int(random.choice("111111111111111222334")))
             pill_group.add(pill)
             pill_group.add(pill2)
 
@@ -251,12 +250,13 @@ def main():
         left_score.image = left_score.font.render("DENSITY: " + str(left_ship.density), 1, BLACK)
         right_score.image = right_score.font.render("DENSITY: " + str(right_ship.density), 1, BLACK)
 
-        left_wins.image = left_wins.font.render("WINS: 0", 1, BLACK)
-        right_wins.image = right_wins.font.render("WINS: 0", 1, BLACK)
+        # left_wins.image = left_wins.font.render("WINS: 0", 1, BLACK)
+        # right_wins.image = right_wins.font.render("WINS: 0", 1, BLACK)
 
         screen.blit(left_score.image, left_score.rect)
         screen.blit(right_score.image, right_score.rect)
 
+        # need to add wins score for each side
         screen.blit(left_wins.image, left_wins.rect)
         screen.blit(right_wins.image, right_wins.rect)
 
@@ -289,5 +289,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-
