@@ -2,13 +2,9 @@
 Created by Ellen Y.
 
 Density 
-
-2 player game
-
-left side player: 
+Left side: 
 Controls: **A = left, W = up, S = down, D = right**
-
-right side player: 
+Right side player: 
 Controls: **arrow buttons (up, left, right, down)**
 
 Pills points lowest (1) to highest (4) 
