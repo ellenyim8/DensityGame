@@ -1,4 +1,4 @@
-# Game
+# Density Game
 Created by Ellen Y.
 
 Density 
