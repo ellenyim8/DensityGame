@@ -1,24 +1,17 @@
 # Density Game
-Created by Ellen Y.
 
-Density 
-Left side: 
-Controls: **A = left, W = up, S = down, D = right**
-Right side player: 
-Controls: **arrow buttons (up, left, right, down)**
+## Goal: whichever side reaches 4000 points wins 
 
-Pills points lowest (1) to highest (4) 
-- Black = 4
-- Red = 3
-- Blue = 2
-- Yellow = 1
+###### Left side Controls: **A = left, W = up, S = down, D = right**
+###### Right side Controls: **arrow buttons (up, left, right, down)**
 
-Goal: whoever reaches 4000 points wins
+###### Pills highest pts to lowest points: Black > Red > Blue > Yellow
+
 
 Modules: 
-- pycharm
-- random
-- os (operating system) 
-- sys (output sys)
-- time
-- math
+- pycharm <br>
+- random <br>
+- os    <br>  
+- sys  <br>
+- time <br>
+- math <br>
