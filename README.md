@@ -10,4 +10,4 @@
 
 **Coded by Ellen Yim on March 20, 2018.**
 
-<img width="1024" alt="Density_game_UML_diagram" src="https://github.com/ellenyim8/DensityGame/assets/69826832/267963d2-87df-4536-a2e8-67528e30e227"># Density Game
+<img width="1024" alt="Density_game_UML_diagram" src="https://github.com/ellenyim8/DensityGame/assets/69826832/267963d2-87df-4536-a2e8-67528e30e227"> 
